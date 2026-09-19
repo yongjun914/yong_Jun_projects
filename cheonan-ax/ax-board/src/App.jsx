@@ -36,6 +36,12 @@ function App() {
     setIdeas((prev) => prev.filter((idea) => idea.id !== id))
   }
 
+  function handleUpdate(id, { title, task, aiIdea }) {
+    setIdeas((prev) =>
+      prev.map((idea) => (idea.id === id ? { ...idea, title, task, aiIdea } : idea)),
+    )
+  }
+
   return (
     <>
       <header className="app-header">
@@ -43,7 +49,7 @@ function App() {
         <p>업무에 AI를 활용할 아이디어를 기록하고 관리하세요.</p>
       </header>
       <IdeaForm onAdd={handleAdd} />
-      <IdeaList ideas={ideas} onDelete={handleDelete} />
+      <IdeaList ideas={ideas} onDelete={handleDelete} onUpdate={handleUpdate} />
     </>
   )
 }

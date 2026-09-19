@@ -108,21 +108,99 @@
   word-break: break-word;
 }
 
+.idea-card-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 6px;
+}
+
+.edit-button,
 .delete-button {
   flex-shrink: 0;
   font: inherit;
   font-size: 13px;
   padding: 4px 10px;
-  border: 1px solid var(--danger);
   border-radius: 6px;
   background: transparent;
-  color: var(--danger);
   cursor: pointer;
+}
+
+.edit-button {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.edit-button:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.delete-button {
+  border: 1px solid var(--danger);
+  color: var(--danger);
 }
 
 .delete-button:hover {
   background: var(--danger);
   color: #fff;
+}
+
+.idea-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.idea-edit-form input,
+.idea-edit-form textarea {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  resize: vertical;
+}
+
+.idea-edit-form input:focus,
+.idea-edit-form textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.idea-edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.save-button,
+.cancel-button {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-button {
+  border: none;
+  background: var(--accent);
+  color: #fff;
+}
+
+.save-button:hover {
+  opacity: 0.9;
+}
+
+.cancel-button {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+}
+
+.cancel-button:hover {
+  background: var(--border);
 }
 
 .idea-card-task {
